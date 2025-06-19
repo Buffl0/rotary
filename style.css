@@ -1,0 +1,316 @@
+:root {
+    --clr-main: #1d4781;
+    --clr-accent: #f7a81b;
+    --clr-dark: #1c1b1f;
+    --clr-light: #fdfdfd;
+
+    --ff-main: 'Inter';
+    --ff-accent: 'Open Sans';
+
+    --margin-main: 10rem;
+    --border-radius: 5px;
+    --section-width: min(100%, 1440px);
+    --section-gap: 15rem;
+
+
+    --fs-x-small:;
+    --fs-small:;
+    --fs-medium:;
+    --fs-large:;
+    --fs-x-large:;
+}
+
+*::before,
+*::after,
+* {
+    padding: 0;
+    margin: 0;
+    text-decoration: none;
+    list-style-type: none;
+
+}
+
+.material-symbols-outlined {
+    font-variation-settings:
+        'FILL' 1,
+        'wght' 400,
+        'GRAD' 0,
+        'opsz' 24
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: var(--section-gap);
+    background-color: var(--clr-light);
+    color: var(--clr-dark);
+    padding-inline: clamp(1rem, 5vw, 2rem);
+    padding-block: 1rem;
+}
+
+header {
+    display: flex;
+    flex-direction: column;
+    gap: .5em;
+    width: var(--section-width);
+    color: var(--clr-light);
+    .top-bar {
+        display: flex;
+        width: 100%;
+        background-color: var(--clr-accent);
+        border-radius: var(--border-radius);
+
+        .contact-container {
+            display: flex;
+            gap: 2em;
+            padding-block: .25em;
+            padding-inline: 1rem;
+
+            .contact-wrapper {
+                display: flex;
+                align-items: center;
+                gap: .5em;
+                font-family: var(--ff-accent);
+                font-size: 11px;
+
+                .contact-icon {
+                    font-size: 20px;
+                }
+            }
+        }
+    }
+
+    nav {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        width: 100%;
+        background-color: var(--clr-main);
+        border-radius: var(--border-radius);
+        .logo-container {
+            img {
+                width: 8rem;
+            }
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 1em;
+        }
+
+        a {
+            font-family: var(--ff-main);
+            color: var(--clr-light);
+        }
+    }
+
+    .img-container {
+        background-color: #f7a81b;
+        border-radius: var(--border-radius);
+        position: relative;
+
+        img {
+            width: 100%;
+            height: 100%;
+            opacity: 60%;
+            border-radius: var(--border-radius);
+
+        }
+
+    }
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    gap: var(--section-gap);
+    width: var(--section-width);
+
+    h2 {
+        font-family: var(--ff-accent);
+        font-size: 48px;
+    }
+
+    p {
+        font-family: var(--ff-main);
+        font-size: 24px;
+        font-weight: 200;
+
+
+    }
+
+    .section-button {
+        color: var(--clr-dark);
+        background-color: transparent;
+        border: 2px solid var(--clr-main);
+        padding: 12px 25px;
+        border-radius: var(--border-radius);
+        font-family: var(--ff-main);
+        font-weight: 700;
+    }
+    .section-button-filled {
+        color: var(--clr-light);
+        background-color: var(--clr-main);
+        border: 2px solid var(--clr-main);
+        padding: 12px 25px;
+        border-radius: var(--border-radius);
+        font-family: var(--ff-main);
+        font-weight: 700;
+    }
+
+    .rotary-club-silesia {
+        display: flex;
+        flex-direction: column;
+        gap: 2em;
+
+        .section-title {
+            margin-inline: 1rem;
+        }
+
+        .section-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+
+            .section-wrapper {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+
+                .section-text-wrapper {
+                    display: flex;
+                    flex-direction: column;
+                    text-align: justify;
+                    gap: 1em;
+                    padding: 1rem;
+                }
+            }
+        }
+    }
+
+    .rotary-history {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        width: 100%;
+        gap: 2em;
+
+        .section-wrapper {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            text-align: justify;
+
+            h2 {
+                align-self: start;
+            }
+
+            p {
+                margin-block: 3rem 7rem;
+            }
+
+            img {
+                max-width: 70%;
+                border-radius: var(--border-radius);
+            }
+
+        }
+    }
+
+    .famous-rotarians {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        border-top: 1px solid var(--clr-main);
+        border-bottom: 1px solid var(--clr-main);
+        max-height: 35rem;
+        overflow: hidden;
+        .section-wrapper {
+            padding-block: calc(var(--section-gap)/2);
+            h2 {
+                font-size: 35px;
+            }
+
+            p {
+                font-size: 16px;
+                margin-block: 2em 3em;
+                max-width: 70%;
+            }
+        }
+
+        .rotarians-container {
+            overflow-y: scroll;
+            scrollbar-width: none;
+            -ms-overflow-style: none;
+
+            .rotarian-wrapper {
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                padding-block: calc(var(--section-gap)/2);
+                border-bottom: 1px solid var(--clr-main);
+                .rotarian-data{
+                    max-width: 80%;
+                    h2{
+                        font-size: 26px;
+                    }
+                    p{
+                        font-size: 16px;
+                        margin-block: 2em 3em;
+                    }
+                }
+                .rotarian-img {
+                    max-height: 20rem;
+                    border-radius: var(--border-radius);
+                }
+            }
+            .rotarian-wrapper:last-of-type{
+                border: 0;
+            }
+        }
+        .rotarians-container::-webkit-scrollbar{
+            display: none;
+        }
+
+    }
+}
+footer{
+    width: var(--section-width);
+    background-color: var(--clr-main);
+    color: var(--clr-light);
+    border-radius: var(--border-radius);
+    padding-block: 6em 3em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    h3, h4{
+        font-family: var(--ff-accent);
+    }
+    p{
+        font-family: var(--ff-main);
+        font-weight: 300;
+    }
+    hr{
+        width: 60%;
+        color: var(--clr-light);
+    }
+    img{
+        width: 8rem;
+    }
+    .footer-container{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        gap: 2em;
+        .footer-wrapper{
+            display: flex;
+            gap: 2em;
+            align-self: center;
+            .footer-item{
+                display: flex;
+                flex-direction: column;
+                gap: .25rem;
+            }
+        }
+    }
+}
